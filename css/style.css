@@ -1,0 +1,946 @@
+:root {
+    --primaryColor: #ff274b; /* اللون الأساسي للموقع */
+    --secondaryCOlor: #f7bcf7; /* اللون الثانوي (تم استخدامه للعناوين الصغيرة) */
+    --lightColor: #ffffff; /* اللون الأبيض للنصوص */
+    --bgColor-1: #171a1c; /* لون خلفية القسم الرئيسي */
+    --bgColor-2: #22282a; /* لون خلفية ثانوية (غير مستخدم) */
+    --padding: 8%; /* حشوة عامة تُستخدم في الأقسام */
+}
+
+* {
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشوات الافتراضية */
+    box-sizing: border-box; /* لتجنب تأثير الحشوات والحدود على الأبعاد */
+}
+
+html {
+    font-family: "josefin Sans", sans-serif; /* خط النصوص */
+    font-size: 16px; /* حجم النص الأساسي */
+    color: var(--lightColor); /* اللون الأساسي للنصوص */
+}
+
+h1 {
+    font-size: 4.65rem; /* حجم كبير للعناوين الرئيسية */
+    margin: 1.7rem 0; /* مسافة بين العنوان والعناصر الأخرى */
+}
+
+h2 {
+    font-size: 2.2rem; /* حجم متوسط للعناوين الفرعية */
+    letter-spacing: 0.10rem; /* زيادة تباعد الحروف قليلاً */
+    cursor: pointer; /* إظهار المؤشر كأن النص قابل للنقر */
+}
+
+h3 {
+    font-size: 1.5rem; /* حجم أصغر للعناوين */
+    margin-bottom: 3.5rem; /* مسافة سفلية للعناوين */
+}
+
+h4 {
+    font-size: 1.25rem; /* حجم أصغر لعناوين التفاصيل */
+    letter-spacing: 0.12rem; /* زيادة تباعد الحروف */
+    color: var(--secondaryCOlor); /* اللون الثانوي للعناوين */
+}
+h5 {
+    font-size: 1.37rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+span {
+    color: var(--primaryColor); /* تلوين النصوص داخل العنصر <span> باللون الأساسي */
+}
+
+P{
+    color: var(--secondaryCOlor);
+    letter-spacing: 1px;
+    line-height: 1.8rem;
+    font-size: 1rem;
+}
+
+/*-------------------------------------------------------------
+------------------------ HOME SECTION
+------------------------------------------------------------ */
+
+.home {
+    width: 100%; /* عرض القسم بالكامل */
+    height: 100vh; /* ارتفاع القسم يملأ الشاشة بالكامل */
+    background-color: var(--bgColor-1); /* لون الخلفية الرئيسي */
+    display: flex; /* استخدام Flexbox */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+}
+
+nav {
+    padding: 1.8rem var(--padding); /* حشوة داخلية حول المحتوى */
+    display: flex; /* استخدام Flexbox */
+    justify-content: space-between; /* توزيع العناصر بين الجوانب */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+}
+
+nav ul li {
+    list-style-type: none; /* إزالة التعداد النقطي */
+    display: inline-block; /* عرض العناصر بشكل أفقي */
+    margin: 0.8rem; /* إضافة مسافة بين العناصر */
+}
+
+nav ul li a {
+    color: var(--lightColor); /* لون النص */
+    text-decoration: none; /* إزالة الخط السفلي */
+    text-transform: capitalize; /* جعل أول حرف كبيرًا */
+    transition: 0.6s; /* إضافة تأثير التحولات */
+}
+
+nav ul li a:hover {
+    color: var(--primaryColor); /* تغيير اللون عند التحويم */
+}
+
+.btn {
+    background-color: var(--primaryColor); /* لون خلفية الزر */
+    color: var(--lightColor); /* لون النص داخل الزر */
+    text-decoration: none; /* إزالة الخط السفلي */
+    font-weight: bold; /* جعل النص عريضًا */
+    padding: 0.81rem 1.87rem; /* حشوة داخلية */
+    border-radius: 30px; /* جعل الزر مستديرًا */
+    border: 2px solid transparent; /* حدود شفافة */
+    transition: 0.4s; /* تأثير التحولات */
+}
+
+.btn:hover {
+    background-color: transparent; /* جعل الخلفية شفافة عند التحويم */
+    border: 2px solid var(--primaryColor); /* إظهار الحدود */
+}
+
+.content {
+    flex-grow: 1; /* يتمدد القسم لملء الفراغ */
+    padding: 0 var(--padding); /* حشوة داخلية */
+    display: flex; /* استخدام Flexbox */
+    align-items: center; /* محاذاة العناصر إلى اليسار */
+    justify-content: space-between;
+
+}
+
+.container-texts {
+    position: relative; /* محاذاة النصوص بالنسبة إلى الحاوية */
+    bottom: 70px; /* تحريك النصوص إلى الأعلى */
+}
+
+.social {
+    margin-top: 3.5rem; /* مسافة علوية للحاوية */
+}
+
+.social a{
+    text-decoration: none;
+}
+
+.social img {
+    margin-right: 2rem; /* مسافة بين الأيقونات */
+    width: 2.5rem; /* عرض الأيقونة */
+    transition: transform 0.3s ease; /* تأثير تكبير عند التحويم */
+}
+
+.social img:hover {
+    transform: scale(1.2); /* تكبير الأيقونة عند التحويم */
+    cursor: pointer; /* تغيير المؤشر إلى اليد */
+}
+
+.home .container-images {
+    width: 45%; /* عرض الحاوية */
+    height: 90%; /* ارتفاع الحاوية */
+    position: relative; /* لتحديد موقع الصور داخليًا */
+    align-self: flex-end;
+}
+
+.home .container-images img {
+    position: absolute; /* جعل الصور تتراكب داخل الحاوية */
+    bottom: 5rem; /* تموضع عند أسفل الحاوية */
+    height: 100%; /* ضبط ارتفاع الصور حسب الحاوية */
+    left: 13rem;
+    transform: translateX(-50px);
+    transition: bottom 0.8s, left 0.8s;
+}
+
+.home .container-images:hover .shape{
+    bottom: 40px;
+}
+.home .container-images:hover .pic{
+    left: 40%;
+}
+
+/*-------------------------------------------------------------
+------------------------ ABOUT SECTION
+------------------------------------------------------------ */
+
+
+.about {
+    background-color: var(--bgColor-2);
+    padding: 2rem var(--padding);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+}
+
+.about .container-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.about .container-image img {
+    max-width: 60%;
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    padding-top: -4rem;
+}
+
+.about .container-texts {
+    position: relative;
+    top: -8px;
+    padding: 0 2rem;
+    width: 40%;
+}
+
+/*-------------------------------------------------------------
+------------------------ SERVICES SECTION
+------------------------------------------------------------ */
+
+
+.services {
+    background-color: var(--bgColor-1);
+    padding: 2rem var(--padding);
+}
+
+.text-center {
+    text-align: center;
+    padding-bottom: 1rem ;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+.card{
+    width: 300px;
+    background-color: var(--bgColor-2);
+    border-radius: 20px;
+    padding: 1.3rem 2rem;
+    text-align: center;
+}
+
+.card i{
+    font-size: 3.12rem;
+    text-align: center;
+    color: var(--primaryColor);
+    margin: 2rem;
+}
+
+.card a{
+    text-decoration: none;
+    color: #ba4eba;
+}
+
+/*-------------------------------------------------------------
+------------------------ SKILLS SECTION
+------------------------------------------------------------ */
+
+
+.skills {
+    background-color: var(--bgColor-2);
+    padding: 2rem var(--padding);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.skills .container-images {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.skills .container-images img {
+    max-width: 60%;
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    padding-top: -4rem;
+}
+
+.skills .container-skills{
+    width: 40%;
+}
+
+.content-skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.skill{
+    width: 100px;
+    height: 100px;
+    background-color: var(--lightColor);
+    border-radius: 50%;
+    margin: 0 2rem 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill img{
+    width: 75%;
+}
+
+/*-------------------------------------------------------------
+------------------------ FOOTER SECTION
+------------------------------------------------------------ */
+
+
+footer{
+    padding: 2rem var(--padding);
+    background-color: var(--bgColor-1);
+}
+
+footer .content-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .content-footer p {
+    color: var(--lightColor);
+    text-align: center;
+    width: 500px;
+    margin-top: 1rem;
+}
+
+footer .content-footer .end {
+    color: var(--primaryColor);
+    margin-top: 1rem;
+}
+
+/*-------------------------------------------------------------
+------------------------ HUMPERGER MENU
+------------------------------------------------------------ */
+
+#menu{
+    display: none;
+    position: relative;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+#menu span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    background-color: var(--lightColor);
+    border-radius: 6px;
+    transform-origin: 0 0 ;
+    transition: 0.4s;
+    margin-bottom: 5px;
+}
+
+#menu.is-active span:nth-child(1) {
+    transform: translate(0, -2px) rotate(45deg);
+}
+
+#menu.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+#menu.is-active span:nth-child(3) {
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+#menu.is-active span {
+    background-color: var(--primaryColor);
+}
+
+/*-------------------------------------------------------------
+------------------------ MEDIA QUERIES
+------------------------------------------------------------ */
+
+
+@media screen and (max-width: 575px){
+    :root{
+        --padding: 1.5rem;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    html{
+        font-size: 13px
+    }
+    .home .container-images {
+        display: none;
+    }
+    .content {
+        padding-top: 4rem;
+    }
+
+    .container-texts {
+        padding-top: 5rem;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background-color: var(--bgColor-1);
+        border-bottom: 1px solid var(--bgColor-2);
+        z-index: 100;
+    }
+    nav > a{
+        display: none;
+    }
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--bgColor-2);
+    }
+
+    nav ul.is-active{
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+    .social{
+        margin-top: 70px;
+    }
+
+    h3{
+        margin-bottom: 70px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+
+    .about .container-image {
+        display: none;
+    }
+
+    .about .container-texts {
+        width: 100%;
+    }
+
+    .services{
+        width: 100%;
+    }
+
+    .box {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 2rem;
+        flex-grow: 1;
+    }
+
+
+
+    .skills .container-images {
+        display: none;
+    }
+
+    .skills .container-skills {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills .container-skills .content-skills {
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer .content-footer p {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 575px) and (max-width: 767px){
+    :root{
+        --padding: 1.5rem;
+    }
+
+    html{
+        font-size: 13px
+    }
+    .home .container-images {
+        display: none;
+    }
+
+    .content {
+        padding-top: 82px;
+    }
+
+    .container-texts {
+        padding-top: 5.5rem;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: var(--bgColor-1);
+        border-bottom: 1px solid var(--bgColor-2);
+        z-index: 100;
+    }
+    nav > a{
+        display: none;
+    }
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--bgColor-2);
+    }
+
+    nav ul.is-active{
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+    .social{
+        margin-top: 30px;
+    }
+
+    h3{
+        margin-bottom: 30px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    .about .container-image {
+        display: none;
+    }
+
+    .about .container-texts {
+        width: 100%;
+
+    }
+
+    .services{
+        width: 100%;
+    }
+
+    .box {
+        justify-content: space-between;
+        flex-flow: column wrap;
+        gap: 1rem;
+
+    }
+
+    .box .card {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .skills .container-images {
+        display: none;
+    }
+
+    .skills .container-skills {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills .container-skills .content-skills {
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer .content-footer p {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px){
+    :root{
+        --padding: 1.5rem;
+    }
+
+    html{
+        font-size: 13px
+    }
+    .home .container-images {
+        display: none;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background-color: var(--bgColor-1);
+        border-bottom: 1px solid var(--bgColor-2);
+        z-index: 100;
+    }
+    nav > a{
+        display: none;
+    }
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--bgColor-2);
+    }
+
+    nav ul.is-active{
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+    .social{
+        margin-top: 70px;
+    }
+
+    h3{
+        margin-bottom: 70px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    .content {
+        padding-top: 3rem;
+        height: 700px;
+    }
+
+    .about .container-image {
+        display: none;
+    }
+
+    .about .container-texts {
+        width: 100%;
+
+    }
+
+    .services{
+        width: 100%;
+    }
+
+    .box {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 2rem;
+        align-content: center;
+    }
+
+    .card {
+        flex-grow: 1
+    }
+
+    .skills .container-images {
+        display: none;
+    }
+
+    .skills .container-skills {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills .container-skills .content-skills {
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer .content-footer p {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1279px){
+    :root{
+        --padding: 1.5rem;
+    }
+
+    html{
+        font-size: 13px
+    }
+    .home .container-images img{
+        height: auto;
+        width: 80%;
+        transform: translateX(-150px);
+        transition: bottom 0, right 0;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background-color: var(--bgColor-1);
+        border-bottom: 1px solid var(--bgColor-2);
+        z-index: 100;
+    }
+
+    nav > a{
+        display: none;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background: var(--bgColor-2);
+    }
+
+    nav ul.is-active{
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+    .social{
+        margin-top: 70px;
+    }
+
+    h3{
+        margin-bottom: 70px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    .content {
+        padding-top: 3rem;
+        height: 700px;
+    }
+
+    .about .container-texts {
+        width: 60%;
+
+    }
+
+    .services{
+        width: 100%;
+    }
+
+    .box {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 2rem;
+        align-content: center;
+    }
+
+
+    .skills .container-skills {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills .container-skills .content-skills {
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer .content-footer p {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1279px) and (max-width: 1500px){
+    :root{
+        --padding: 1.5rem;
+    }
+
+    html{
+        font-size: 13px
+    }
+    .home .container-images img{
+        height: auto;
+        width: 70%;
+        transform: translateX(-150px);
+        transition: bottom 0, right 0;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background-color: var(--bgColor-1);
+        border-bottom: 1px solid var(--bgColor-2);
+        z-index: 100;
+    }
+
+    nav > a{
+        display: none;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background: var(--bgColor-2);
+    }
+
+    nav ul.is-active{
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+    .social{
+        margin-top: 70px;
+    }
+
+    h3{
+        margin-bottom: 70px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    .content {
+        padding-top: 3rem;
+        height: 700px;
+    }
+
+    .about .container-texts {
+        width: 60%;
+
+    }
+
+    .services{
+        width: 100%;
+    }
+
+    .box {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 2rem;
+        align-content: center;
+    }
+
+
+    .skills .container-skills {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills .container-skills .content-skills {
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer .content-footer p {
+        width: 100%;
+    }
+}
+
+
